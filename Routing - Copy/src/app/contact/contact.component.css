@@ -1,0 +1,16 @@
+h1 {
+    text-align: center;
+    background-color: blueviolet;
+}
+
+p {
+    font-size: large;
+    text-align: justify;
+
+
+}
+
+input.ng-invalid.ng-touched ,select.ng-invalid.ng-touched{
+    border: 1px solid red;
+    box-shadow: 0 0 13px rgb(255,0,0,0.09);
+}

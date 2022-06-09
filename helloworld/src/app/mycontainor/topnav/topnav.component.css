@@ -1,0 +1,25 @@
+.topnav{
+    background-color: lightcyan;
+    color:#fff;
+    padding: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.brand{
+    float: left;
+    width: 20%;
+    color:brown;
+    font-weight: 700;
+}
+.toplinks{
+    float:left;
+    width:80%;
+    text-align: right;
+}
+.toplinks a{
+    color:black;
+    margin:0 10px;
+    text-decoration: none;
+}
+.clear{
+    clear:both;
+}

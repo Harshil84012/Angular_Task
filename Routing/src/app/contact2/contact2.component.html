@@ -1,0 +1,76 @@
+<div class="row justify-content-center">
+
+    <div class="col-md-6" [ngClass]="formStatus">
+        <form [formGroup]="myReactiveForm" (ngSubmit)="onSubmit()">
+            <div formGroupName="userDetail">
+                <div class="mb-3">
+
+                    <label for="username" class="form-label">User Name*</label>
+
+                    <input type="text" class="form-control" id="username" placeholder="Enter User Name" name="username"
+                        formControlName="username">
+                    <small class="text-danger"
+                        *ngIf="!myReactiveForm.get('userDetail.username').valid && myReactiveForm.get('userDetail.username').touched">
+                        <span *ngIf="myReactiveForm.get('userDetail.username').errors['required']"></span>
+                        <span
+                            *ngIf="myReactiveForm.get('userDetail.username').errors['required']"></span>{{myReactiveForm.get('userDetail.username').value}}
+                        username not allowed</small>
+
+
+
+
+                </div>
+                <div class=" mb-3">
+                    <label for="email" class="form-label">email*</label>
+                    <input type="email" class="form-control" id="email" placeholder="Enter email id " name="email"
+                        formControlName="email">
+                    <small class="text-danger"
+                        *ngIf="!myReactiveForm.get('userDetail.email').valid && myReactiveForm.get('userDetail.email').touched">Please
+                        Enter Valid
+                        Email</small>
+                </div>
+
+
+            </div>
+
+            <div class="mb-3"> <label for="course">Select Course*</label>
+                <select class="form-control" id="course" formControlName="course">
+                    <option value="Angular">Angular</option>
+                    <option value="HTML">HTML</option>
+                    <option value="JAVA">JAVA</option>
+                    <option value="CSS">CSS</option>
+                </select>
+            </div>
+
+
+            <div class="mb-3">
+
+                <div class="custom-control custom-radio" *ngFor="let gender of genders">
+                    <input type="radio" type="radio" id="{{gender.id}}" class="custom-control-input"
+                        value="{{gender.value}}" formControlName="gender">
+                    <label class="custom-check-label" for="{{gender.id}}">
+                        {{gender.value}}
+                    </label>
+                </div>
+            </div>
+
+            <div class="mb-3" formArrayName="skills">
+
+                <label for="skill" class="form-label">Skill</label>
+                <ng-container *ngFor="let skill of myReactiveForm.get('skills').controls; index as i">
+                    <input type="text" class="form-control mt-2" id="skill" placeholder="Add Skill" name="skill"
+                        formControlName="{{i}}">
+                </ng-container>
+
+                <button class="btn btn-light btn-sm mt-3 btn-add" (click)="onAddSkills()"><i>+</i>Add Skills</button>
+
+            </div>
+
+            <div class="mb-3">
+                <button type="submit" class="btn btn-success">Submit</button>
+            </div>
+
+        </form>
+
+    </div>
+</div>

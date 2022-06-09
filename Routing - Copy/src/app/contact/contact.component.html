@@ -1,0 +1,130 @@
+<h1>Contact Us</h1>
+<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sed libero non est officia incidunt corporis expedita odit
+    tenetur. Aperiam laborum iste fugit ea culpa laudantium maxime cupiditate optio quae sapiente facere esse unde porro
+    tempora obcaecati praesentium, ipsa, quo officiis, temporibus illo? Similique vero, dignissimos distinctio facere
+    voluptates tempore, omnis quibusdam dolores nostrum harum eos aliquid id repudiandae asperiores optio molestiae.</p>
+
+<div class="row justify-content-center">
+
+    <div class="col-md-6">
+        <form (ngSubmit)="onSubmit()" #myForm="ngForm">
+            <div ngModelGroup="userDetail" #userDetail="ngModelGroup">
+                <div class="mb-3">
+
+                    <label for="username" class="form-label">User Name*</label>
+                    <input type="text" class="form-control" id="username" placeholder="Enter User Name" name="username"
+                        [(ngModel)]="userName" required>
+                    <small *ngIf="userName">Your UserName is {{userName}}</small>
+                    <button class="btn-primary btn-sm mt-2" (click)="setUsername()">Set UserName</button>
+
+                    <div class="mb-3">
+                        <label for="email" class="form-label">email*</label>
+                        <input type="email" class="form-control" id="email" placeholder="Enter email id " name="email"
+                            ngModel required email #email="ngModel">
+                        <small class="text-danger" *ngIf="!email.valid && email.touched">Please Enter valid
+                            email</small>
+
+                    </div>
+                </div>
+
+            </div>
+            <div class="mb-3"> <label for="course">Select Course*</label>
+                <select class="form-control" id="course" name="course" [ngModel]="defaultCourse">
+                    <option value="Angular">Angular</option>
+                    <option value="HTML">HTML</option>
+                    <option value="JAVA">JAVA</option>
+                    <option value="CSS">CSS</option>
+                </select>
+            </div>
+            <div class="mb-3">
+
+                <div class="custom-control custom-radio" *ngFor="let gender of genders">
+                    <input type="radio" type="radio" name="gender" id="{{gender.id}}" class="custom-control-input"
+                        [ngModel]="DefaultGender" value="{{gender.value}}">
+                    <label class="custom-check-label" for="{{gender.id}}">
+                        {{gender.value}}
+                    </label>
+                </div>
+            </div>
+            <div class="mb-3">
+                <button type="submit" class="btn btn-success" [disabled]="!myForm.valid">Submit</button>
+            </div>
+
+        </form>
+
+    </div>
+</div>
+
+
+
+<!-- <div class="row">
+    <div class="col-md-6">
+        <app-card>
+            <h5 class="card-title">Laptop</h5>
+        </app-card>
+    </div>
+    <div class="col-md-6">
+        <app-card>
+            <h5 class="card-title">washing machine</h5>
+        </app-card>
+    </div> -->
+<!-- 
+    <div class="col-md-6">
+        <app-card>
+            <h5 class="card-title">Mobile</h5>
+
+        </app-card>
+    </div>
+    <div class="col-md-6">
+        <app-card>
+            <h5 class="card-title">Tv</h5>
+
+        </app-card>
+    </div> -->
+<!-- <div class="col-md-6">
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">Laptop</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    card's
+                    content.</p>
+                <a routerLink="laptop" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">Laptop</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    card's
+                    content.</p>
+                <a routerLink="laptop" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">Laptop</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    card's
+                    content.</p>
+                <a routerLink="laptop" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+
+<div class="row justify-content-center mt-2" *ngIf="submitted">
+    <div class="col-md-6 text-left py-3">
+        <h2>Form Data:</h2>
+        <p>UserName:<strong>{{formData.userName}}</strong></p>
+        <p>Email:<strong>{{formData.email}}</strong></p>
+        <p>Course:<strong>{{formData.course}}</strong></p>
+        <p>Gender:<strong>{{formData.gender}}</strong></p>
+    </div>
+</div>

@@ -1,0 +1,28 @@
+h1{
+    text-align: center;
+    background-color:blueviolet;
+}
+p{
+    font-size: large;
+    text-align: justify;
+   
+    
+}
+.page-area{
+    width:80%;
+    margin:0 auto;
+    padding:15px;
+
+}
+ 
+.card{
+    display:inline-block;
+    width:23%;
+     margin:0 8px 8px;
+     
+} 
+img{
+    width:250px;
+    height:250px;
+    
+}

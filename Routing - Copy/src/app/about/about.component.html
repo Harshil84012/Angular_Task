@@ -1,0 +1,87 @@
+<!-- <h1>About Us</h1>
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos pariatur maxime vel officiis suscipit temporibus
+    architecto quasi debitis repellat id? Tempore ut aspernatur tenetur perspiciatis harum debitis pariatur atque,
+    architecto laboriosam qui nostrum placeat quas velit, rerum sint, quisquam asperiores quae necessitatibus laudantium
+    totam mollitia fugit? Sint, impedit labore suscipit omnis quam sed voluptatum iste ipsum cumque repellat neque,
+    possimus eligendi nemo beatae laboriosam sapiente officiis autem est? Neque explicabo non libero quam! Consequuntur
+    qui debitis molestiae. Molestias unde sed repellat laborum provident consequuntur, tenetur nobis voluptates in
+    expedita fugit qui aut, laboriosam aliquid cum, ratione eaque quod et maiores.</p>
+
+ <app-adddelete></app-adddelete> -->
+<!--<input type="text" placeholder="type here." #val>
+<button (click)="submitValue(val)">submit</button>
+<app-comp1 *ngIf="isExist" [myValue]="value">panchal</app-comp1>
+<button (click)="destroy()" class="btn btn-danger">remove</button>  -->
+
+
+<!-- <div class="page-area">
+    <h2>About US</h2>
+    <h4>{{value1 | hp:10}}</h4> -->
+<!-- <h4>{{value1 | slice:2:6}}</h4>
+    <h4>{{value1 | lowercase}}</h4>
+    <h4>{{value1 | titlecase}}</h4>
+    <h4>{{date | date:'shortTime'}}</h4>
+    <h4>{{date | date:'medium'}}</h4>
+    <h4>{{date | date:'short'}}</h4>
+    <h4>{{date | date:'fullDate' | uppercase}}</h4> -->
+
+<!-- <ul>
+        <li *ngFor="let name of nameArr">
+            {{name | hp:8}}
+        </li>
+    </ul>
+</div> -->
+
+<div class="page-area">
+    <h2>About Us</h2>
+
+    <div class="row justify-content-center">
+        <div class="col-md-8 form-inline mb-2">
+            <input type="text" class="form-control"  placeholder="add Products" #add>
+            <button class="btn btn-success ml-2" (click)="onaddProduct(add)">
+                Add Product
+            </button>
+        </div>
+        <div class="col-md-8">
+            <div class="form-group">
+
+                <input type="email" class="form-control" id="search" placeholder="Select Product By Name"
+                    [(ngModel)]="nameSearch">
+            </div>
+        </div>
+        <div class="col-md-8">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">ProductName</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Availability</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let product of productArr | filter : nameSearch">
+                        <th scope="row">{{product.sno}}</th>
+                        <td>{{product.name}}</td>
+                        <td>{{product.price}}</td>
+                        <td><span class="badge">{{product.availability}}</span></td>
+                    </tr>
+                    <!-- <tr>
+                    <th scope="row">2</th>
+                    <td>Laptop</td>
+                    <td>20000</td>
+                    <td><span class="badge bg-danger">Not Available</span></td>
+                    
+                  </tr>
+                  <tr>
+                    <th scope="row">3</th>
+                    <td>washingMachine</td>
+                    <td>30000</td>
+                    <td><span class="badge bg-success">Available</span></td>
+                  </tr> -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
